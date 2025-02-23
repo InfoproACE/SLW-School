@@ -133,6 +133,9 @@ main h1 {
         position: relative;
         width: 100%;
     }
+    .menu li {
+        font-size: 10px;
+    }
 }
 /* การจัดรูปแบบเมนู */
 .menu-container {
