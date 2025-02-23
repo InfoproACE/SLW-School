@@ -67,6 +67,14 @@ main {
     text-align: center;
 }
 
+main .klw-flex h1 {
+    font-size: 24px;
+    text-align: left;
+    border-left: 5px solid #fbcc1a;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+
 main h1 {
     margin-bottom: 20px;
     font-size: 24px;
