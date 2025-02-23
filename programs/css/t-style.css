@@ -1,0 +1,152 @@
+
+/* รีเซ็ตการตั้งค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Anuphan", serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* การจัดรูปแบบ header */
+header {
+    background-color: #fff;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border: 2px solid #fff;
+}
+
+.profile-info span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header button {
+    background-color: #0c7bfd;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    right: 25px;
+    position: absolute;
+    transition: all .4sease-in-out;
+}
+
+header button:hover {
+    background-color: #006be8;
+    transform: scale(1.06);
+}
+
+/* การจัดรูปแบบ main content */
+main {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+main h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* เพิ่มการตอบสนองต่อขนาดหน้าจอ */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info img {
+        width: 40px;
+        height: 40px;
+    }
+}
+/* การจัดรูปแบบเมนู */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container {
+    background-color: ;
+/* --------------------------------------------------------------   */
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.icon-container i {
+    font-size: 18px;
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* การตอบสนองต่อขนาดหน้าจอ */
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+    .menu-item{
+          justify-content: left;
+          display: grid;
+    }
+}
