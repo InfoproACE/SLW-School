@@ -15,20 +15,21 @@
         }
 
         header{
-            padding: 0 auto;
-            max-width: 1200px;
+            background-color: #ffffff;
+            box-shadow: 2px 2px 4px #00000050;
         }
         
         .header {
-            background-color: #ffffff;
-            box-shadow: 2px 2px 4px #00000050;
-            display: flex;
-            justify-content: space-between;
             padding: 20px;
             color: #fa71c1;
             font-size: 12px;
+            margin: 0 auto;
+            max-width: 1200px;
         }
-        
+        .nav{
+            display: flex;
+            justify-content: space-between;
+        }
         .nav-logo {
             display: flex;
             justify-content: center;
@@ -61,18 +62,20 @@
 <body>
     <header>
         <div class="header">
-            <div class="nav-logo">
-                <img src="/img/SLW.png" alt="โลโก้โรงเรียน" class="logo">
-                <h1>โรงเรียนสโมสรหลวงวิทยาลัย</h1>
+            <div class="nav">
+                <div class="nav-logo">
+                    <img src="/img/SLW.png" alt="โลโก้โรงเรียน" class="logo">
+                    <h1>โรงเรียนสโมสรหลวงวิทยาลัย</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a>หน้าหลัก</a></li>
+                        <li><a>หน้าหลัก</a></li>
+                        <li><a>หน้าหลัก</a></li>
+                        <li><a>หน้าหลัก</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a>หน้าหลัก</a></li>
-                    <li><a>หน้าหลัก</a></li>
-                    <li><a>หน้าหลัก</a></li>
-                    <li><a>หน้าหลัก</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <div class="content">
