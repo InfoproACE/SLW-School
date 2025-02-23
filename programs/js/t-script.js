@@ -4,7 +4,7 @@ const teacherData = JSON.parse(localStorage.getItem('loggedInTeacher'));
 if (teacherData) {
     // แสดงข้อมูลครู
     document.getElementById('teacher-name').textContent = `${teacherData.firstName} ${teacherData.lastName}`;
-    document.getElementById('teacher-photo').src = teacherData.profilePic || 'default-photo.jpg';
+    document.getElementById('teacher-photo').src = teacherData.profilePic || 'https://slw-school.pages.dev/img/SLW.png';
 
     // ตรวจสอบว่าเป็นนาย (หัวหน้าฝ่ายวิชาการเพียงคนเดียว)
     if (teacherData.username === '25002') {
