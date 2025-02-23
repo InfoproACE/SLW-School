@@ -1,0 +1,47 @@
+/* Basic table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+/* Table header style */
+thead th {
+  background-color: #4F81BD; /* Excel blue header */
+  color: #ffffff;
+  padding: 8px;
+  border: 1px solid #c0c0c0;
+  text-align: center;
+}
+
+/* Table body cells */
+tbody td {
+  padding: 8px;
+  border: 1px solid #c0c0c0;
+  text-align: left;
+}
+
+/* Alternate row background for readability */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #d0e4f5;
+}
+
+/* Action buttons (if any) styling within table cells */
+tbody td .action-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+tbody td .action-btn:hover {
+  background-color: #45a049;
+}
