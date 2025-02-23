@@ -361,7 +361,7 @@ li ul {
     display: none;
 }
 
-li ul:hover {
+li:hover ul {
     display: block;
 }
 
