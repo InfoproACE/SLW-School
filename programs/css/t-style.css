@@ -259,12 +259,12 @@ main h1 {
     border-radius: 5px;
     border: 1px solid transparent;
     background: transparent;
-    color: #fa71c1;
+    color: #000;
     font-family: "Anuphan", serif;
 }
 
 #levelSelect option {
     font-family: "Anuphan", serif;
-  color: #fa71c1; /* เปลี่ยนสีตัวอักษรในตัวเลือก */
+  color: #000; /* เปลี่ยนสีตัวอักษรในตัวเลือก */
   background-color: #fbcc1a; /* เปลี่ยนสีพื้นหลังในตัวเลือก */
 }
