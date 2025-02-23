@@ -358,6 +358,11 @@ li ul {
     text-align: left;
     background: #afcccc;
     border: 1px solid #ddd;
+    display: none;
+}
+
+li ul:hover {
+    display: block;
 }
 
 ul hr {
