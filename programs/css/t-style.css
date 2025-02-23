@@ -253,7 +253,7 @@ main h1 {
     margin-bottom: 20px;
 }
 
-#subjectSelect {
+#levelSelect {
     width: 120px;
     padding: 10px;
     border-radius: 5px;
@@ -263,7 +263,7 @@ main h1 {
     font-family: "Anuphan", serif;
 }
 
-#subjectSelect option {
+#levelSelect option {
     font-family: "Anuphan", serif;
   color: #fa71c1; /* เปลี่ยนสีตัวอักษรในตัวเลือก */
   background-color: #fbcc1a; /* เปลี่ยนสีพื้นหลังในตัวเลือก */
