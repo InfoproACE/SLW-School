@@ -14,26 +14,28 @@
             background-color: #fbcc1a;
         }
 
-        header{
-            background-color: #ffffff;
-            box-shadow: 2px 2px 4px #00000050;
+        header {
+            margin: 0 auto;
+            max-width: 1200px;
         }
         
-        .header {
+        header {
+            background-color: #ffffff;
+            box-shadow: 2px 2px 4px #00000050;
+            display: flex;
+            justify-content: space-between;
             padding: 20px;
             color: #fa71c1;
             font-size: 12px;
             margin: 0 auto;
             max-width: 1200px;
         }
-        .nav{
-            display: flex;
-            justify-content: space-between;
-        }
+        
         .nav-logo {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 5px;
         }
         .logo {
             width: 50px;
@@ -62,7 +64,6 @@
 <body>
     <header>
         <div class="header">
-            <div class="nav">
                 <div class="nav-logo">
                     <img src="/img/SLW.png" alt="โลโก้โรงเรียน" class="logo">
                     <h1>โรงเรียนสโมสรหลวงวิทยาลัย</h1>
@@ -75,7 +76,6 @@
                         <li><a>หน้าหลัก</a></li>
                     </ul>
                 </nav>
-            </div>
         </div>
     </header>
     <div class="content">
