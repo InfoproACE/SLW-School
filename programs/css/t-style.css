@@ -351,3 +351,9 @@ ul.menu {
     margin-right: 2px;
     color: #fbcc1a;
 }
+
+li ul {
+    position: absolute;
+    list-style: none;
+    text-align: left;
+}
