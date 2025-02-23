@@ -118,6 +118,9 @@ main h1 {
     main {
         margin-left: 200px;
     }
+    #levelSelect{
+        border: 1px solid #000;
+    }
 }
 /* การจัดรูปแบบเมนู */
 .menu-container {
