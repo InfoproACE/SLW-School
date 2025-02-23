@@ -120,6 +120,18 @@ main h1 {
     }
     #levelSelect{
         border: 1px solid #000;
+        width: 100%;
+    }
+    
+    .klw-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .custom-select {
+        position: relative;
+        width: 100%;
     }
 }
 /* การจัดรูปแบบเมนู */
