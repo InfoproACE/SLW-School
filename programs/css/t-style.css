@@ -246,3 +246,13 @@ main h1 {
         margin-left: 120px;
     }
 }
+
+#subjectSelect {
+    width: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #fff;
+    font-family: "Anuphan", serif;
+}
