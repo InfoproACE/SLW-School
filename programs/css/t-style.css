@@ -158,7 +158,7 @@ main h1 {
 }
 
 /* การตอบสนองต่อขนาดหน้าจอ */
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     .menu-container {
         grid-template-columns: repeat(2, 1fr);
     }
