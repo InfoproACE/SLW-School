@@ -16,7 +16,7 @@ body {
 /* การจัดรูปแบบ header */
 header {
     background-color: #fff;
-    color: #fff;
+    color: #fa71c1;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
