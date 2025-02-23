@@ -86,16 +86,20 @@ main h1 {
     }
     
     header button {
-        right: 0;
-        position: relative;
-        margin-top: 6px;
+        position: fixed;
+        transition: all .4s ease-in-out;
+        bottom: 20px;
     }
 
     header{
-        position: absolute;
+        position: fixed;
         width: 100px;
         height: 100%;
         top: 0;
+    }
+    
+    main {
+        margin-left: 120px;
     }
 }
 /* การจัดรูปแบบเมนู */
