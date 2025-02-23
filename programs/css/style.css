@@ -1,6 +1,6 @@
 body {
     font-family: "Anuphan", serif;
-    background: url(/img/background.png) center bottom;
+    background: linear-gradient(135deg, #ff57c4, #007afe, #fdd200);
     display: flex;
     justify-content: center;
     align-items: center;
