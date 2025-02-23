@@ -77,18 +77,24 @@ main h1 {
     .profile-info {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
+        ext-align: center;
+        width: 160px;
+        top: 20px;
+        position: absolute;
     }
 
     .profile-info img {
         width: 40px;
         height: 40px;
+        margin-right: 0;
     }
     
     header button {
         position: fixed;
-        transition: all .4s ease-in-out;
+        transition: all .4sease-in-out;
         bottom: 20px;
+        right: unset;
+        width: 160px;
     }
 
     header{
@@ -131,7 +137,6 @@ main h1 {
 
 .icon-container {
     background-color: #fbcc1a;
-/* --------------------------------------------------------------   */
     color: #fff;
     border-radius: 50%;
     width: 40px;
