@@ -327,7 +327,6 @@ main h1 {
 ul.menu {
     list-style: none;
     display: flex;
-    background: linear-gradient(to top, #80d4d3, #c7f4f4);
     flex-wrap: wrap;
 }
 
@@ -336,6 +335,8 @@ ul.menu {
     font-family: Arial;
     font-size: 14px;
     cursor: pointer;
+    background-image: url(/img/dialogHeaderT.gif);
+    background-repeat: repeat-x;
 }
 .menu li:nth-child(1)::before,
 .menu li:nth-child(2)::before,
