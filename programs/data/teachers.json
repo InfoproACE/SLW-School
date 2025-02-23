@@ -1,7 +1,7 @@
 [
     {
-        "username": "10120",
-        "password": "Dara12369874",
+        "username": "25003",
+        "password": "376982550",
         "firstName": "นายวิเลิศ",
         "lastName": "ภูริวัชร",
         "profilePic": "https://slw-school.pages.dev/img/SLW.png"
@@ -11,6 +11,13 @@
         "password": "kkw40240",
         "firstName": "นายสุชาติ",
         "lastName": "ศิริสุนทร",
+        "profilePic": "https://slw-school.pages.dev/img/SLW.png"
+    },
+    {
+        "username": "40240",
+        "password": "kkw40240",
+        "firstName": "นายธนอนธร",
+        "lastName": "บูรณชนนท์",
         "profilePic": "https://slw-school.pages.dev/img/SLW.png"
     }
 ]
