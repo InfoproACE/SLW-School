@@ -90,6 +90,13 @@ main h1 {
         position: relative;
         margin-top: 6px;
     }
+
+    header{
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        top: 0;
+    }
 }
 /* การจัดรูปแบบเมนู */
 .menu-container {
