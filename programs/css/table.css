@@ -6,6 +6,10 @@ table {
   border-color: #dedede;
 }
 
+thead {
+    text-align: left;
+}
+
 /* Table header style */
 thead th {
   background-color: #d7fafa; /* Excel blue header */
