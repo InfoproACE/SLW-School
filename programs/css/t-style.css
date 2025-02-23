@@ -195,7 +195,7 @@ main h1 {
     }
 }
 
-@media (max-width: 372px) {}
+@media (max-width: 372px) {
     .menu-item h3{
         font-size: 10px;
     }
@@ -212,5 +212,22 @@ main h1 {
     }
     main {
         margin-left: 160px;
+    }
+}
+
+@media (max-width: 320px) {
+    header {
+        width: 120px;
+        height: 100%;
+        top: 0;
+    }
+    .profile-info {
+        width: 80px;
+    }
+    header button {
+        width: 80px;
+    }
+    main {
+        margin-left: 120px;
     }
 }
