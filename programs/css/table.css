@@ -3,6 +3,7 @@ table {
   border-collapse: collapse;
   width: -webkit-fill-available;
   font-size: 20%;
+  border-color: #dedede;
 }
 
 /* Table header style */
