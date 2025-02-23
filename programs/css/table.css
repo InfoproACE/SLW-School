@@ -4,6 +4,7 @@ table {
   width: -webkit-fill-available;
   font-size: 20%;
   border-color: #dedede;
+  font-family: "Sarabun", serif;
 }
 
 thead {
@@ -16,6 +17,7 @@ thead th {
   color: #000;
   padding: 8px;
   border: 1px solid #c0c0c0;
+  font-weight: 300;
 }
 
 /* Table body cells */
@@ -23,6 +25,7 @@ tbody td {
   padding: 8px;
   border: 1px solid #c0c0c0;
   text-align: left;
+  font-weight: 300;
 }
 
 /* Alternate row background for readability */
