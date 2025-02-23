@@ -316,3 +316,11 @@ main h1 {
   border-top: var(--size) solid black;
   top: 55%;
 }
+
+/* ---------------------------- */
+
+
+ul.menu {
+    list-style: none;
+    display: flex;
+}
