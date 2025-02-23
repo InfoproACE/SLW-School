@@ -7,11 +7,10 @@ table {
 
 /* Table header style */
 thead th {
-  background-color: #4F81BD; /* Excel blue header */
-  color: #ffffff;
+  background-color: #d7fafa; /* Excel blue header */
+  color: #000;
   padding: 8px;
   border: 1px solid #c0c0c0;
-  text-align: center;
 }
 
 /* Table body cells */
