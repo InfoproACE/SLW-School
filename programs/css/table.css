@@ -5,6 +5,7 @@ table {
   font-size: 20%;
   border-color: #dedede;
   font-family: Arial;
+    display: none;
 }
 
 thead {
