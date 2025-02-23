@@ -247,13 +247,19 @@ main h1 {
     }
 }
 
+.klw-flex {
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+}
+
 #subjectSelect {
-    width: 80px;
+    width: 120px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid transparent;
     background: transparent;
-    color: #fff;
+    color: #000;
     font-family: "Anuphan", serif;
 }
 
