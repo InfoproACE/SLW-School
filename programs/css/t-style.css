@@ -389,3 +389,19 @@ ul hr {
     transform: translate(95%, -34%);
     width: max-content;
 }
+
+header-a {
+    background: linear-gradient(to top, #80d4d3, #c7f4f4);
+    font-family: Arial;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 20px;
+    width: 100%;
+    display: flex;
+    border: 1px solid;
+    border-color: #dedede;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 600;
+    user-select: none;
+}
