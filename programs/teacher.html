@@ -72,6 +72,28 @@
         </button>
       
     </main>
+
+      <script>
+        // เลือก element ที่มี id="student"
+        const studentItem = document.getElementById('student');
+        
+        // เพิ่ม event listener สำหรับการคลิก
+        studentItem.addEventListener('click', function(event) {
+          // ป้องกันไม่ให้ event ไปกระทบกับ element ลูก (ถ้ามีการคลิกที่รายการย่อย)
+          event.stopPropagation();
+          
+          // เลือกรายการย่อยภายใน studentItem
+          const subMenu = this.querySelector('ul');
+          if(subMenu) {
+            // Toggle การแสดงผล
+            if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+              subMenu.style.display = 'block';
+            } else {
+              subMenu.style.display = 'none';
+            }
+          }
+        });
+      </script>
     <script src="js/level-entry.js"></script>
     <script src="js/teacher.js"></script>
     <script src="js/t-script.js"></script>
