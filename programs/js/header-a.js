@@ -1,32 +1,32 @@
-    // ฟังก์ชันสำหรับซ่อน header ทั้งหมด
-    function hideAllHeaders() {
-      const headers = document.querySelectorAll('header-a');
-      headers.forEach(header => {
-        header.style.display = 'none';
+    // ฟังก์ชันสำหรับซ่อน body ทั้งหมด
+    function hideAllBodys() {
+      const bodys = document.querySelectorAll('body-a');
+      bodys.forEach(body => {
+        body.style.display = 'none';
       });
     }
     
     // เมื่อคลิก "ประวัตินักเรียน"
     document.getElementById('his-stu').addEventListener('click', function(event) {
       event.stopPropagation();
-      // ซ่อน header ทั้งหมดก่อน
-      hideAllHeaders();
-      // แสดง header "ประวัตินักเรียน"
-      const headerHis = document.getElementById('header-his-stu');
-      if (headerHis) {
-        headerHis.style.display = 'block';
+      // ซ่อน body ทั้งหมดก่อน
+      hideAllBodys();
+      // แสดง body "ประวัตินักเรียน"
+      const bodyHis = document.getElementById('body-his-stu');
+      if (bodyHis) {
+        bodyHis.style.display = 'block';
       }
     });
 
 // เมื่อคลิก "การศึกษา"
 document.getElementById('edu-stu').addEventListener('click', function(event) {
   event.stopPropagation();
-  // ซ่อน header ทั้งหมดก่อน
-  hideAllHeaders();
-  // แสดง header "การศึกษา"
-  const headerEdu = document.getElementById('header-edu-stu');
-  if (headerEdu) {
-    headerEdu.style.display = 'block';
+  // ซ่อน body ทั้งหมดก่อน
+  hideAllBodys();
+  // แสดง body "การศึกษา"
+  const bodyEdu = document.getElementById('body-edu-stu');
+  if (bodyEdu) {
+    bodyEdu.style.display = 'block';
   }
 });
 
