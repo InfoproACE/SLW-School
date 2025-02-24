@@ -369,15 +369,15 @@ ul hr {
     margin: 10px 10px;
 }
 
-.menu li:nth-child(2) li:nth-child(1)::before,
-.menu li:nth-child(2) li:nth-child(2)::before,
-.menu li:nth-child(2) li:nth-child(4)::before,
-.menu li:nth-child(2) li:nth-child(5)::before{
+.menu li#student li:nth-child(1)::before,
+.menu li#student li:nth-child(2)::before,
+.menu li#student li:nth-child(4)::before,
+.menu li#student li:nth-child(5)::before{
     content: '✤';
     margin-right: 5px;
     color: #fbcc1a;
 }
 
-.menu li:nth-child(2) li:nth-child(3)::before{
+.menu li#student li:nth-child(3)::before{
     margin-right: 5px;
 }
