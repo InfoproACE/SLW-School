@@ -80,7 +80,7 @@
       
     </main>
 
-      <script>
+    <script>
         // เลือก element ที่มี id="student"
         const studentItem = document.getElementById('student');
         
@@ -100,7 +100,28 @@
             }
           }
         });
-      </script>
+    </script>
+    <script>
+    // เลือก element ที่มี id "set-stu"
+    const setStuItem = document.getElementById('set-stu');
+
+    // เพิ่ม event listener สำหรับการคลิกที่ element หลัก
+    setStuItem.addEventListener('click', function(event) {
+      // ป้องกันไม่ให้ event ถูกส่งต่อไปยัง element ลูก (ถ้ามีการคลิกที่รายการย่อย)
+      event.stopPropagation();
+
+      // เลือกรายการย่อยภายใน element นี้
+      const subMenu = this.querySelector('ul');
+      if (subMenu) {
+        // Toggle การแสดงผล: ถ้าแสดงอยู่ ให้ซ่อน; ถ้าไม่แสดง ให้แสดง
+        if (subMenu.style.display === 'block') {
+          subMenu.style.display = 'none';
+        } else {
+          subMenu.style.display = 'block';
+        }
+      }
+    });
+  </script>
     <script src="js/level-entry.js"></script>
     <script src="js/teacher.js"></script>
     <script src="js/t-script.js"></script>
