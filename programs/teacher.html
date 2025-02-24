@@ -135,10 +135,10 @@
       const headers = document.querySelectorAll(`header-a.${headerClass}`);
       headers.forEach(header => {
         // ถ้า header ซ่อนอยู่ให้แสดง หากแสดงอยู่ให้ซ่อน
-        if (header.style.display === 'block') {
+        if (header.style.display === 'flex') {
           header.style.display = 'none';
         } else {
-          header.style.display = 'block';
+          header.style.display = 'flex';
         }
       });
     }
