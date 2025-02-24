@@ -362,9 +362,9 @@ li ul {
     display: none;
 }
 
-li:hover ul {
+/* li:hover ul {
     display: block;
-}
+} */
 
 ul hr {
     margin: 10px 10px;
