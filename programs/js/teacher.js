@@ -10,5 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function logout() {
     sessionStorage.removeItem("loggedInUser");
-    window.location.href = "logi.html";
+    window.location.href = "login.html";
 }
