@@ -329,6 +329,7 @@ ul.menu {
     flex-wrap: wrap;
     background: linear-gradient(to top, #80d4d3, #c7f4f4);
     width: fit-content;
+    margin-bottom: 10px;
 }
 
 .menu li {
