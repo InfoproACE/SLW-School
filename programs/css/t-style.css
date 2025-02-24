@@ -405,3 +405,19 @@ header-a {
     font-weight: 600;
     user-select: none;
 }
+
+body-a div text {
+    padding: 5px;
+    width: 100%;
+    border-bottom: 1px #cccccc solid;
+    border-left: 1px #cccccc solid;
+    border-right: 1px #cccccc solid;
+    border-top: 1px #333333 solid;
+    background: #fff;
+}
+
+body-a div {
+    margin-top: 1px;
+    display: flex;
+    width: 100%;
+}
