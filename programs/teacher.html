@@ -127,6 +127,35 @@
       }
     });
   </script>
+
+  <script>
+    // ฟังก์ชันสำหรับ toggle header ตาม id ของเมนูที่คลิก
+    function toggleHeader(headerClass) {
+      // หาทุก header-a ที่มี class ที่เกี่ยวข้อง
+      const headers = document.querySelectorAll(`header-a.${headerClass}`);
+      headers.forEach(header => {
+        // ถ้า header ซ่อนอยู่ให้แสดง หากแสดงอยู่ให้ซ่อน
+        if (header.style.display === 'block') {
+          header.style.display = 'none';
+        } else {
+          header.style.display = 'block';
+        }
+      });
+    }
+
+    // ตัวอย่าง: เมื่อคลิกที่เมนู ให้ทำการเช็ค id และ toggle header ที่มี class ตรงกัน
+    document.querySelectorAll('ul.menu > li').forEach(menuItem => {
+      menuItem.addEventListener('click', function(event) {
+        // ป้องกัน event bubble หากมีเมนูซ้อน
+        event.stopPropagation();
+        const itemId = this.id;
+        if (itemId) {
+          // Toggle header ที่มี class ชื่อเดียวกับ id ที่คลิก
+          toggleHeader(itemId);
+        }
+      });
+    });
+  </script>
     <script src="js/level-entry.js"></script>
     <script src="js/teacher.js"></script>
     <script src="js/t-script.js"></script>
