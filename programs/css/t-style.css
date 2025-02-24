@@ -398,7 +398,6 @@ header-a {
     padding: 5px;
     padding-left: 20px;
     width: 100%;
-    display: flex;
     border: 1px solid;
     border-color: #dedede;
     border-top-left-radius: 10px;
