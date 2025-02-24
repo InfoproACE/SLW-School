@@ -391,6 +391,7 @@ ul hr {
 }
 
 header-a {
+    display: none;
     background: linear-gradient(to top, #80d4d3, #c7f4f4);
     font-family: Arial;
     font-size: 16px;
