@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="css/t-style.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <header>
+        <div class="profile-info">
+            <img id="profilePic" alt="Profile Picture">
+            <span id="userProfile"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="klw-flex">
+            <h1>KLW Dashboard</h1>
+            <div class="custom-select">
+                <select id="levelSelect">
+                        <option value="" disabled="" selected="">เลือกระดับชั้น</option>
+                        <!-- ตัวเลือกวิชาจะถูกโหลดจาก JavaScript -->
+                </select>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style=" width: 70px; ">รหัสนักเรียน</th>
+                    <th>ชื่อนักเรียน</th>
+                    <th>ห้อง/แผนการเรียน</th>
+                    <th>การกระทำ</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+        <ul class="menu">
+            <li>โรงเรียน</li>
+            <li id="student">
+                นักเรียน
+                <ul>
+                  <li id="his-stu">ประวัตินักเรียน</li>
+                  <li id="edu-stu">การศึกษา</li>
+                  <hr>
+                    <li id="set-stu">
+                        จัด นักเรียน ชั้น/ห้อง
+                        <ul>
+                            <li>โดยการกรอกรหัส 1</li>
+                            <li>โดยการกรอกรหัส 2</li>
+                            <li>อัตโนมัติ</li>
+                        </ul>
+                    </li>
+                  <li>นักเรียน ชั้น/ห้อง</li>
+                  <li>รายชื่อนักเรียน</li>
+                </ul>
+            </li>
+            <li>ครู</li>
+            <li>งานทะเบียน</li>
+            <li>งานวัดผล</li>
+            <li>ผลการเรียน</li>
+            <li>สารสนเทศ</li>
+            <li>รายงาน</li>
+            <li>ADMIN</li>
+        </ul>
+        <body-a id="body-his-stu" class="body-his-stu">
+            <header-a>
+                <text>ประวัตินักเรียน</text>
+            </header-a>
+            <div>
+                <text class="find">ค้นหาจาก <input type="text" id="" name=""><button>&lt;ไป</button></text>
+                <div id="h-table">
+                    <div id="head-tb">
+                        <div class="left-menu">
+                            <p><img src="/img/add.png" width="20px"></p>
+                            <p><img src="/img/add.png" width="20px"></p>
+                        </div>
+                        <div class="page">
+                            test
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body-a>
+        <body-a id="body-edu-stu" class="body-edu-stu">
+            <header-a>
+                <text>การศึกษา</text>
+            </header-a>
+            <div>
+                <text class="find">ค้นหาจาก <input type="text" id="" name=""><button>&lt;ไป</button></text>
+            </div>
+        </body-a>
+            
+
+        <!-- ปุ่มที่จะแสดงเฉพาะครูที่เป็นหัวหน้าฝ่ายวิชาการ -->
+        <button id="academic-head-button" style="display: none;">
+            การจัดการฝ่ายวิชาการ
+        </button>
+      
+    </main>
+
+    <script src="js/level-entry.js"></script>
+    <script src="js/header-a.js"></script>
+    <script src="js/teacher.js"></script>
+    <script src="js/t-script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- ใช้เพื่อดึง Font Awesome icons -->
+</body>
+</html>
