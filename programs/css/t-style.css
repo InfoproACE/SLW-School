@@ -458,4 +458,5 @@ text.find {
     border: 1px solid #dedede;
     user-select: none;
     cursor: pointer;
+    color: #fff;
 }
