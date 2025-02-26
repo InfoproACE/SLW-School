@@ -1,0 +1,13 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sub-menu {
+    width: 24%;
+    text-align: center;
+    background: #fbcc1a;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    padding: 4px;
+}
