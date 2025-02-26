@@ -448,3 +448,14 @@ text.find {
     align-items: center;
     gap: 5px;
 }
+
+.find button {
+    height: 18px;
+    background: linear-gradient(0, #77b9b9, #aad4d4);
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dedede;
+    user-select: none;
+    cursor: pointer;
+}
