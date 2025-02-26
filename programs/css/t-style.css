@@ -421,7 +421,7 @@ body-a div text {
     background: #fff;
 }
 
-body-a div {
+body-a > div {
     margin-top: 1px;
     width: 100%;
 }
