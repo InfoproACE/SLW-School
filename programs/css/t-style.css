@@ -470,3 +470,8 @@ left-menu {
     border-radius: 10px;
     border: 1px solid #dedede;
 }
+
+#h-table {
+    padding-top: 10px;
+    background: #fff;
+}
