@@ -475,3 +475,8 @@ left-menu {
     padding-top: 10px;
     background: #fff;
 }
+
+#head-tb {
+    background: #d7fafa;
+    display: flex;
+}
