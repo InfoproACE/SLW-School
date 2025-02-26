@@ -10,4 +10,9 @@
     border-radius: 20px;
     border: 1px solid #aaa;
     padding: 4px;
+    transition: 0.5s ease;
+}
+
+.sub-menu:hover {
+    background: #e0b200;
 }
