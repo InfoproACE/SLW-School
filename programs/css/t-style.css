@@ -423,7 +423,6 @@ body-a div text {
 
 body-a div {
     margin-top: 1px;
-    display: flex;
     width: 100%;
 }
 
