@@ -478,4 +478,7 @@ text.find {
 #head-tb {
     background: #d7fafa;
     display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
