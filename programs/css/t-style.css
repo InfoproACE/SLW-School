@@ -460,9 +460,8 @@ text.find {
     color: #fff;
 }
 
-left-menu {
-    display: flex
-;
+.left-menu {
+    display: flex;
     padding: 5px 15px;
     background: linear-gradient(0, #77b9b9, #b9d4d4);
     width: fit-content;
