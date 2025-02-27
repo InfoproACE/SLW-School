@@ -65,7 +65,7 @@
             color: white;
         }
         
-        nav {
+        nav#flex-bar {
             display: flex;
             align-items: center;
         }
@@ -83,6 +83,26 @@
         h1 {
             font-size: 14px;
         }
+        
+        @media (max-width: 600px) {
+            .nav-logo h1 {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 448px) {
+            header nav#flex-bar{
+                display: none;
+            }
+            header nav#grid-bar{
+                display: grid;
+            }
+        }
+    
+        header nav#grid-bar{
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -92,7 +112,15 @@
                     <img src="/img/SLW.png" alt="โลโก้โรงเรียน" class="logo">
                     <h1>โรงเรียนสโมสรหลวงวิทยาลัย</h1>
                 </div>
-                <nav>
+                <nav id="flex-bar">
+                    <ul>
+                        <li><a>หน้าหลัก</a></li>
+                        <li><a>เกี่ยวกับ</a></li>
+                        <li><a href="programs/login">สำหรับครู-บุคลากร</a></li>
+                        <li><a>ติดต่อ</a></li>
+                    </ul>
+                </nav>
+                <nav id="grid-bar">
                     <ul>
                         <li><a>หน้าหลัก</a></li>
                         <li><a>เกี่ยวกับ</a></li>
