@@ -70,7 +70,7 @@
             align-items: center;
         }
 
-        ul {
+        nav ul {
             display: flex;
             gap: 20px;
         }
@@ -94,9 +94,6 @@
             header nav#flex-bar{
                 display: none;
             }
-            header nav#grid-bar{
-                display: grid !important;
-            }
 
             .header {
                 max-width: unset;
@@ -107,11 +104,26 @@
             .logo {
                 width: 100px;
             }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .grid-bar {
+                height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: height 0.3sease, opacity 0.3sease;
+            }
+            .grid-bar.active {
+                height: 146.5px;
+                opacity: 1;
+                margin-top: 10px;
+                flex-direction: column;
+            }
         }
     
-        header nav#grid-bar{
-            display: none;
-        }
 
     </style>
 </head>
@@ -130,7 +142,7 @@
                         <li><a>ติดต่อ</a></li>
                     </ul>
                 </nav>
-                <nav id="grid-bar">
+                <nav id="grid-bar" class="grid-bar">
                     <ul>
                         <li><a>หน้าหลัก</a></li>
                         <li><a>เกี่ยวกับ</a></li>
@@ -147,5 +159,13 @@
     <footer>
         &copy; 2025 โรงเรียนสโมสรหลวงวิทยาลัย
     </footer>
+    <script>
+        const logo = document.querySelector('.logo');
+        const navLinks = document.querySelector('.grid-bar');
+        
+        logo.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
