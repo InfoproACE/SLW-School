@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Prompt", sans-serif;
+        }
+        
+        header{
+            height: 36px;
+            background: #3367d7;
+            padding: 10px 9px 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            user-select: none;
+            position: relative;
+            z-index: 999;
+        }
+
+        @media (max-width: 599px) {
+            header {
+                padding-left: 0;
+            }
+        }
+        
+        .header_left{
+            display: flex;
+        }
+        
+
+        .hamburger {
+            display: flex;
+            align-items: center;
+        }
+
+        span.google-icon {
+            font-size: 23px;
+            color: #fff;
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            font-weight: 500;
+            user-select: text;
+        }
+
+        .header_right{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 150px;
+        }
+
+        .header_right .icon-circle {
+            background: #fff;
+            width: 20px;
+            height: 20px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 100%;
+            font-size: 14px;
+            color: #3367d7;
+            font-weight: 600;
+        }
+        
+        .h_right-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .h_right-right{
+            display: flex;
+            align-items: center;
+        }
+
+        .nine-dot{
+            display: flex;
+            gap: 2px;
+            flex-wrap: wrap;
+            width: 20px;
+            height: min-content;
+        }
+
+        .nine-dot > div{
+            width: 5px;
+            height: 5px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+            margin-right: 3px;
+        }
+
+        .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+        }
+
+        section#bottom-header {
+            background: #fff;
+            height: 30px;
+            box-shadow: 2px 2px 4px #00000050;
+            position: relative;
+            z-index: 999;
+        }
+
+        .text {
+            padding-left: 22px;
+            font-size: 13px;
+            padding-top: 5px;
+        }
+
+        section#menu-list {
+            display: flex;
+            justify-content: space-between;
+            padding: 32px 0 32px 32px;
+            margin-right: 23px;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 2%;
+            width: 95%;
+        }
+
+        .menu{
+            width: 15%;
+            height: 188px;
+            background: #fff;
+            border-radius: 10px;
+            transition: .5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu:hover {
+            background: #e0e0e0;
+        }
+        
+        .menu-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 0;
+            width: 22px;
+            height: 100%;
+            background: #fff;
+            border-left: 1px solid #dedede;
+        }
+
+        .menu svg {
+            padding-top: 16px;
+        }
+
+        .menu h1 {
+            font-size: 16px;
+            font-weight: 600;
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .menu p {
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_left">
+            <div class="hamburger">
+                <span class="material-symbols-outlined google-icon">menu</span>
+            </div>
+            <div class="logo">
+                KLW Admin
+            </div>
+        </div>
+        <div class="header_right">
+            <div class="h_right-left">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+            </div>
+            <div class="h_right-right">
+                <div class="nine-dot">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                    <div class="dot3"></div>
+                    <div class="dot4"></div>
+                    <div class="dot5"></div>
+                    <div class="dot6"></div>
+                    <div class="dot7"></div>
+                    <div class="dot8"></div>
+                    <div class="dot9"></div>
+                </div>
+                <div class="profile">
+                    <img src="https://slw-school.pages.dev/img/SLW.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="bottom-header">
+        <div class="text">Admin Console</div>
+    </section>
+    <section id="menu-list">
+        <div class="menu-list">
+            <div class="menu" id="dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Z"/></svg>
+                <h1>Dashboard</h1>
+                <p>see relevant insights about your organization</p>
+            </div>
+            <div class="menu" id="users">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Z"/></svg>
+                <h1>Users</h1>
+                <p>Add or manage users</p>
+            </div>
+            <div class="menu" id="groups">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M0-240v-53q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v53H780ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Z"/></svg>
+                <h1>Groups</h1>
+                <p>Create groups and mailing lists</p>
+            </div>
+            <div class="menu" id="organizational-units">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M604-120v-125H450v-410h-93v130H80v-315h277v125h247v-125h276v315H604v-130h-94v350h94v-130h276v315H604Z"/></svg>
+                <h1>Organizational units</h1>
+                <p>Add, remove, rename, move or search for an organizational unit</p>
+            </div>
+            <div class="menu" id="buildings-and-resources">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M80-120v-720h390v165h410v555H80Zm60-60h105v-105H140v105Zm0-165h105v-105H140v105Zm0-165h105v-105H140v105Zm0-165h105v-105H140v105Zm165 495h105v-105H305v105Zm0-165h105v-105H305v105Zm0-165h105v-105H305v105Zm0-165h105v-105H305v105Zm165 495h350v-435H470v105h80v60h-80v105h80v60h-80v105Zm185-270v-60h60v60h-60Zm0 165v-60h60v60h-60Z"/></svg>
+                <h1>Buildings and resources</h1>
+                <p>Manage and monitor buildings, rooms and resources </p>
+            </div>
+            <div class="menu" id="devices">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M80-160v-90h80v-490q0-24.75 17.63-42.38Q195.25-800 220-800h620v60H220v490h240v90H80Zm470 0q-12.75 0-21.37-8.63Q520-177.25 520-190v-460q0-12.75 8.63-21.38Q537.25-680 550-680h300q12.75 0 21.38 8.62Q880-662.75 880-650v460q0 12.75-8.62 21.37Q862.75-160 850-160H550Z"/></svg>
+                <h1>Devices</h1>
+                <p>Secure corporate data on devices</p>
+            </div>
+            <div class="menu" id="apps">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M80-80v-224h224v224H80Zm288 0v-224h224v224H368Zm288 0v-224h224v224H656ZM80-368v-224h224v224H80Zm288 0v-224h224v224H368Zm288 0v-224h224v224H656ZM80-656v-224h224v224H80Zm288 0v-224h224v224H368Zm288 0v-224h224v224H656Z"/></svg>
+                <h1>Apps</h1>
+                <p>Manage apps and their settings </p>
+            </div>
+            <div class="menu" id="security">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="m436-356 228-228-42-41-183 183-101-101-44 44 142 143Zm44 275q-140-35-230-162.5T160-523v-238l320-120 320 120v238q0 152-90 279.5T480-81Z"/></svg>
+                <h1>Security</h1>
+                <p>Configure security settings</p>
+            </div>
+            <div class="menu" id="reports">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M840-270 472-558 312-337 120-491v-189l160 120 200-280 200 160h160v410ZM120-160v-254l204 163 160-221 356 278v34H120Z"/></svg>
+                <h1>Reports</h1>
+                <p>Monitor usage across your organization</p>
+            </div>
+            <div class="menu" id="billing">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm0-342h680v-129H140v129Z"/></svg>
+                <h1>Billing</h1>
+                <p>Manage subscriptions</p>
+            </div>
+            <div class="menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M120-120v-555h165v-165h390v330h165v390H533v-165H427v165H120Zm60-60h105v-105H180v105Zm0-165h105v-105H180v105Zm0-165h105v-105H180v105Zm165 165h105v-105H345v105Zm0-165h105v-105H345v105Zm0-165h105v-105H345v105Zm165 330h105v-105H510v105Zm0-165h105v-105H510v105Zm0-165h105v-105H510v105Zm165 495h105v-105H675v105Zm0-165h105v-105H675v105Z"/></svg>
+                <h1>Company profile</h1>
+                <p>Update information about your company </p>
+            </div>
+            <div class="menu" id="admin-roles">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#3367d7"><path d="M220-80q-24.75 0-42.37-17.63Q160-115.25 160-140v-434q0-24.75 17.63-42.38Q195.25-634 220-634h70v-96q0-78.85 55.61-134.42Q401.21-920 480.11-920q78.89 0 134.39 55.58Q670-808.85 670-730v96h70q24.75 0 42.38 17.62Q800-598.75 800-574v434q0 24.75-17.62 42.37Q764.75-80 740-80H220Zm260.17-200q31.83 0 54.33-22.03T557-355q0-30-22.67-54.5t-54.5-24.5q-31.83 0-54.33 24.5t-22.5 55q0 30.5 22.67 52.5t54.5 22ZM350-634h260v-96q0-54.17-37.88-92.08-37.88-37.92-92-37.92T388-822.08q-38 37.91-38 92.08v96Z"/></svg>
+                <h1>Admin roles</h1>
+                <p>Manage administrative roles</p>
+            </div>
+        </div>
+    </section>
+    <div class="menu-right"></div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.menu');
+
+        menuItems.forEach(menu => {
+            menu.addEventListener('click', () => {
+                const menuId = menu.id;
+                
+                window.location.href = `/${menuId}.html`;
+            });
+        });
+    </script>
+</body>
+</html>
