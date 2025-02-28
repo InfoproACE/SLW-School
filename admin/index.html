@@ -24,8 +24,9 @@
             display: flex;
             justify-content: space-between;
             user-select: none;
-            position: relative;
-            z-index: 999;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
 
         @media (max-width: 599px) {
@@ -219,6 +220,9 @@
             }
         }
 
+        .air {
+            height: 56px;
+        }
     </style>
 </head>
 <body>
@@ -255,6 +259,7 @@
             </div>
         </div>
     </header>
+    <div class="air"></div>
     <section id="bottom-header">
         <div class="text">Admin Console</div>
     </section>
