@@ -209,6 +209,10 @@
                 gap: 10px 10% !important;
             }
             .h_right-left{display:none;}
+            
+            .header_right {
+                width: 80px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -218,6 +222,22 @@
             
             .menu-list {
                 gap: 10px 0 !important;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .nine-dot { display: none ;}
+            
+            .header_right {
+                justify-content: flex-end !important;
+            }
+            
+            .profile {
+                margin-left: 0 !important;
+            }
+            
+            .header_right {
+                width: unset !important;
             }
         }
 
