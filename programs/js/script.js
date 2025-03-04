@@ -4,7 +4,7 @@ async function login(event) {
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwrm9heBvRHM2Tj5urKYL4avVz2vhNIHfXjj0XaTlSUBUNRtTY_P9ia603mI8EStj109w/exec");
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec");
         const teachers = await response.json();
 
         const teacher = teachers.find(t => t.username === username && t.password === password);
