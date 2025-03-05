@@ -12,13 +12,14 @@ function loadUsernames() {
             const select = document.getElementById("nameSelect");
             data.forEach(user => {
                 let option = document.createElement("option");
-                option.value = user.firstName; // ใช้ username แทน name
-                option.textContent = user.firstName; // แสดง username ใน dropdown
+                option.value = user.username; // ใช้ username เป็นค่าที่ส่งไป
+                option.textContent = user.firstName; // แสดงชื่อจริงใน dropdown
                 select.appendChild(option);
             });
         })
         .catch(error => console.error("Error loading JSON:", error));
 }
+
 
 // อัปเดตเวลาตามประเทศไทย
 function updateClock() {
@@ -30,10 +31,13 @@ function updateClock() {
 
 // ส่งข้อมูลไป Google Sheets
 function sendData() {
-    const firstName = document.getElementById("nameSelect").value;
+    const username = document.getElementById("nameSelect").value;
     const time = new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" });
 
-    if (!firstName) {
+    console.log("✅ Username:", username);
+    console.log("✅ Time:", time);
+
+    if (!username) {
         alert("กรุณาเลือกชื่อก่อนกดลงเวลา");
         return;
     }
@@ -41,14 +45,16 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, time }),
-        mode: "no-cors" // ปิด CORS
+        body: JSON.stringify({ username, time })
     })
-    .then(() => {
-        alert("บันทึกข้อมูลเรียบร้อย! (อาจไม่มีการตอบกลับ)");
+    .then(response => response.json())
+    .then(data => {
+        console.log("📌 Response:", data);
+        if (data.result === "success") {
+            alert("บันทึกข้อมูลเรียบร้อย!");
+        } else {
+            alert("เกิดข้อผิดพลาด!");
+        }
     })
-    .catch(error => {
-        console.error("Error sending data:", error);
-        alert("เกิดข้อผิดพลาดในการส่งข้อมูล!");
-    });
+    .catch(error => console.error("❌ Error sending data:", error));
 }
