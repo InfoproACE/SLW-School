@@ -38,12 +38,17 @@ function sendData() {
         hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
     }).format(new Date());
 
-    fetch("https://script.google.com/macros/s/AKfycbzwASen1gf80aFvmaV8yj80cRE3f8qCwmzysA5wqd9pUzmBRAff7veKcc0x93cB7ZRXCA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxUUxBAwMUlyfCDedc3od79mBiU9cuHLWv6-a2EDWQ3TJDo0-u3fXueP5_nlIPofzkdeQ/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, time })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.result === "success") {
             alert("บันทึกข้อมูลเรียบร้อย!");
@@ -51,5 +56,8 @@ function sendData() {
             alert("เกิดข้อผิดพลาด!");
         }
     })
-    .catch(error => console.error("Error sending data:", error));
+    .catch(error => {
+        console.error("Error sending data:", error);
+        alert("เกิดข้อผิดพลาดในการส่งข้อมูล!");
+    });
 }
