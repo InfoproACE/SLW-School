@@ -38,10 +38,11 @@ function sendData() {
         hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
     }).format(new Date());
 
-    fetch("https://script.google.com/macros/s/AKfycbxUUxBAwMUlyfCDedc3od79mBiU9cuHLWv6-a2EDWQ3TJDo0-u3fXueP5_nlIPofzkdeQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzwyXfh3coDeli0fn0NCKOom94HZemZjvvWMoG-UQ7sEw7iNkvN1MAj91eBRcnvyAncBA/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, time })
+        body: JSON.stringify({ firstName, time }),
+        redirect: "follow" // เพิ่ม redirect เพื่อจัดการการตอบกลับจาก Google Apps Script
     })
     .then(response => {
         if (!response.ok) {
@@ -53,7 +54,7 @@ function sendData() {
         if (data.result === "success") {
             alert("บันทึกข้อมูลเรียบร้อย!");
         } else {
-            alert("เกิดข้อผิดพลาด!");
+            alert("เกิดข้อผิดพลาด: " + data.message);
         }
     })
     .catch(error => {
