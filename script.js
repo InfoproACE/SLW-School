@@ -1,21 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-    loadUsernames();
+    loadUsernames(); // โหลดรายชื่อจาก Google Apps Script
     updateClock();
     setInterval(updateClock, 1000); // อัปเดตเวลาทุกวินาที
 });
 
-// 📌 โหลดรายชื่อจาก Local Storage
+// 📌 โหลดรายชื่อจาก Google Apps Script Web App
 function loadUsernames() {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const select = document.getElementById("nameSelect");
-    select.innerHTML = "<option value=''>-- เลือกชื่อ --</option>"; // ตัวเลือกเริ่มต้น
+    const url = "https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec";
 
-    users.forEach(user => {
-        let option = document.createElement("option");
-        option.value = user.firstName;
-        option.textContent = user.firstName;
-        select.appendChild(option);
-    });
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            const select = document.getElementById("nameSelect");
+            select.innerHTML = "<option value=''>-- เลือกชื่อ --</option>"; // ตัวเลือกเริ่มต้น
+
+            data.forEach(user => {
+                let option = document.createElement("option");
+                option.value = user.firstName; 
+                option.textContent = user.firstName;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("เกิดข้อผิดพลาดในการโหลดรายชื่อ:", error);
+            alert("ไม่สามารถโหลดรายชื่อได้ กรุณาลองใหม่!");
+        });
 }
 
 // 📌 อัปเดตเวลาตามโซนเวลาไทย
