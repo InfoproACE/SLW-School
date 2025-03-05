@@ -30,31 +30,18 @@ function updateClock() {
 
 // ส่งข้อมูลไป Google Sheets
 
-function sendData() {
-    const firstName = document.getElementById("nameSelect").value;
-    const time = new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" });
-
-    console.log("✅ First Name:", firstName);
-    console.log("✅ Time:", time);
-
-    if (!firstName) {
-        alert("กรุณาเลือกชื่อก่อนกดลงเวลา");
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, time }) // ส่ง firstName แทน username
+        body: JSON.stringify({ firstName, time }) // เปลี่ยนเป็น username
     })
     .then(response => response.json())
     .then(data => {
-        console.log("📌 Response:", data);
         if (data.result === "success") {
             alert("บันทึกข้อมูลเรียบร้อย!");
         } else {
             alert("เกิดข้อผิดพลาด!");
         }
     })
-    .catch(error => console.error("❌ Error sending data:", error));
-}
+    .catch(error => console.error("Error sending data:", error));
+} 
