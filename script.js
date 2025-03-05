@@ -12,8 +12,8 @@ function loadUsernames() {
             const select = document.getElementById("nameSelect");
             data.forEach(user => {
                 let option = document.createElement("option");
-                option.value = user.username; // ใช้ username แทน name
-                option.textContent = user.username; // แสดง username ใน dropdown
+                option.value = user.firstName; // ใช้ username แทน name
+                option.textContent = user.firstName; // แสดง username ใน dropdown
                 select.appendChild(option);
             });
         })
