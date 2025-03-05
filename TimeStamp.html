@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบลงเวลา</title>
+    <title>ระบบลงเวลาอัตโนมัติ</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         select, button { margin: 10px; padding: 10px; font-size: 16px; }
@@ -11,16 +11,21 @@
     </style>
 </head>
 <body>
-    <h2>ระบบลงเวลาเข้า - ออกงาน</h2>
-
-    <label for="nameSelect">เลือกชื่อ:</label>
+    <h2>ระบบลงเวลาอัตโนมัติ</h2>
+    
+    <!-- แสดงเวลาแบบเรียลไทม์ -->
+    <p>เวลาปัจจุบัน: <span id="clock"></span></p>
+    
+    <!-- เลือกชื่อ -->
     <select id="nameSelect">
-        <option value="">-- เลือกชื่อ --</option>
+        <option value="">-- กำลังโหลดรายชื่อ... --</option>
     </select>
 
-    <div id="clock">Loading time...</div>
+    <br><br>
 
-    <button onclick="sendData()">ลงเวลา</button>
+    <!-- ปุ่มลงเวลา -->
+    <button onclick="sendData()">ลงเวลาเข้า</button>
+    <button onclick="sendClockOut()">ลงเวลาออก</button>
 
     <script src="script.js"></script>
 </body>
