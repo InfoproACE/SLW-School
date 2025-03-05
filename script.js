@@ -41,18 +41,14 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, time }) // ส่งข้อมูลที่ถูกต้อง
+        body: JSON.stringify({ username, time }),
+        mode: "no-cors" // ปิด CORS
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.result === "success") {
-            alert("บันทึกข้อมูลเรียบร้อย!");
-        } else {
-            alert("เกิดข้อผิดพลาด!");
-        }
+    .then(() => {
+        alert("บันทึกข้อมูลเรียบร้อย! (อาจไม่มีการตอบกลับ)");
     })
     .catch(error => {
         console.error("Error sending data:", error);
-        alert("ไม่สามารถส่งข้อมูลได้ โปรดตรวจสอบการเชื่อมต่อหรือสิทธิ์ของ Google Apps Script");
+        alert("เกิดข้อผิดพลาดในการส่งข้อมูล!");
     });
 }
