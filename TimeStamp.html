@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบลงเวลา</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        select, button { margin: 10px; padding: 10px; font-size: 16px; }
+        #clock { font-size: 24px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h2>ระบบลงเวลาเข้า - ออกงาน</h2>
+
+    <label for="nameSelect">เลือกชื่อ:</label>
+    <select id="nameSelect">
+        <option value="">-- เลือกชื่อ --</option>
+    </select>
+
+    <div id="clock">Loading time...</div>
+
+    <button onclick="sendData()">ลงเวลา</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
