@@ -29,7 +29,7 @@ function updateClock() {
 }
 
 // ส่งข้อมูลไป Google Sheets
-
+function sendData() {
 fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,4 +44,4 @@ fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrf
         }
     })
     .catch(error => console.error("Error sending data:", error));
-} 
+}
