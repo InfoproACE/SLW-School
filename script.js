@@ -1,15 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     loadUsernames();
     updateClock();
     setInterval(updateClock, 1000); // อัปเดตเวลาทุกวินาที
 });
 
-// โหลดรายชื่อจาก JSON (เปลี่ยนเป็น username)
+// โหลดรายชื่อจาก JSON 
 function loadUsernames() {
     fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec")
         .then(response => response.json())
         .then(data => {
             const select = document.getElementById("nameSelect");
+            select.innerHTML = ""; // เคลียร์ตัวเลือกก่อนโหลดใหม่
+
             data.forEach(user => {
                 let option = document.createElement("option");
                 option.value = user.firstName; // ใช้ firstName เป็นค่าที่ส่งไป
@@ -30,10 +32,16 @@ function updateClock() {
 
 // ส่งข้อมูลไป Google Sheets
 function sendData() {
-fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
+    const select = document.getElementById("nameSelect");
+    const firstName = select.value; // ดึงค่าที่ถูกเลือกจาก dropdown
+    const time = new Intl.DateTimeFormat('th-TH', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
+    }).format(new Date());
+
+    fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, time }) // เปลี่ยนเป็น username
+        body: JSON.stringify({ firstName, time })
     })
     .then(response => response.json())
     .then(data => {
