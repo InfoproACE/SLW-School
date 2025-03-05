@@ -9,11 +9,11 @@ function loadNames() {
     fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec")
         .then(response => response.json())
         .then(data => {
-            const select = document.getElementById("nameSelect");
+            const select = document.getElementById("usernameSelect");
             data.forEach(person => {
                 let option = document.createElement("option");
-                option.value = person.name;
-                option.textContent = person.name;
+                option.value = person.username;
+                option.textContent = person.username;
                 select.appendChild(option);
             });
         })
@@ -31,10 +31,10 @@ function updateClock() {
 
 // ส่งข้อมูลไป Google Sheets
 function sendData() {
-    const name = document.getElementById("nameSelect").value;
+    const username = document.getElementById("usernameSelect").value;
     const time = new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" });
 
-    if (!name) {
+    if (!username) {
         alert("กรุณาเลือกชื่อก่อนกดลงเวลา");
         return;
     }
@@ -42,7 +42,7 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, time })
+        body: JSON.stringify({ username, time })
     })
     .then(response => response.json())
     .then(data => {
