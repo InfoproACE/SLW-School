@@ -61,7 +61,7 @@ function sendClockOut() {
 
 // 📌 ฟังก์ชันหลักสำหรับส่งข้อมูลไป Google Apps Script
 function sendRequest(action, user) {
-    var url = "https://script.google.com/macros/s/AKfycbz14LZ5SXMuXH97U2SdTGvYPfGGqnAKl0wrARd87_6GtUrqnjdLuDJTY8MiyehcLt6qgg/exec";
+    var url = "https://script.google.com/macros/s/AKfycbz0Meb_YljFpAb3kZoI2dkG509NWzFz1Oeo7UjjH3Ij2nAaJ8ajgoWGjRg7IzvCho-iDQ/exec";
     var params = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
