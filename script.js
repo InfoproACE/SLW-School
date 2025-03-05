@@ -41,7 +41,7 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, time }) // เปลี่ยนเป็น username
+        body: JSON.stringify({ username, time }) // ส่งข้อมูลที่ถูกต้อง
     })
     .then(response => response.json())
     .then(data => {
@@ -51,5 +51,8 @@ function sendData() {
             alert("เกิดข้อผิดพลาด!");
         }
     })
-    .catch(error => console.error("Error sending data:", error));
+    .catch(error => {
+        console.error("Error sending data:", error);
+        alert("ไม่สามารถส่งข้อมูลได้ โปรดตรวจสอบการเชื่อมต่อหรือสิทธิ์ของ Google Apps Script");
+    });
 }
