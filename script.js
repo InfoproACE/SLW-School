@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    loadNames();
+    loadUsernames();
     updateClock();
     setInterval(updateClock, 1000); // อัปเดตเวลาทุกวินาที
 });
 
-// โหลดรายชื่อจาก JSON
-function loadNames() {
+// โหลดรายชื่อจาก JSON (เปลี่ยนเป็น username)
+function loadUsernames() {
     fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec")
         .then(response => response.json())
         .then(data => {
-            const select = document.getElementById("usernameSelect");
-            data.forEach(person => {
+            const select = document.getElementById("nameSelect");
+            data.forEach(user => {
                 let option = document.createElement("option");
-                option.value = person.username;
-                option.textContent = person.username;
+                option.value = user.username; // ใช้ username แทน name
+                option.textContent = user.username; // แสดง username ใน dropdown
                 select.appendChild(option);
             });
         })
@@ -23,15 +23,14 @@ function loadNames() {
 // อัปเดตเวลาตามประเทศไทย
 function updateClock() {
     const now = new Date();
-    const options = { timeZone: "Asia/Bangkok", hour12: false };
     document.getElementById("clock").textContent = new Intl.DateTimeFormat('th-TH', {
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
+        hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
     }).format(now);
 }
 
 // ส่งข้อมูลไป Google Sheets
 function sendData() {
-    const username = document.getElementById("usernameSelect").value;
+    const username = document.getElementById("nameSelect").value;
     const time = new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" });
 
     if (!username) {
@@ -42,7 +41,7 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, time })
+        body: JSON.stringify({ username, time }) // เปลี่ยนเป็น username
     })
     .then(response => response.json())
     .then(data => {
