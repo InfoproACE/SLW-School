@@ -38,7 +38,7 @@ function sendData() {
         hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
     }).format(new Date());
 
-    fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzwASen1gf80aFvmaV8yj80cRE3f8qCwmzysA5wqd9pUzmBRAff7veKcc0x93cB7ZRXCA/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, time })
