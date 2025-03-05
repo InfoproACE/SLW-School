@@ -4,25 +4,30 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateClock, 1000); // อัปเดตเวลาทุกวินาที
 });
 
-// โหลดรายชื่อจาก JSON 
+// 📌 โหลดรายชื่อจาก Google Apps Script Web App
 function loadUsernames() {
-    fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec")
+    const url = "https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec";
+
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const select = document.getElementById("nameSelect");
-            select.innerHTML = ""; // เคลียร์ตัวเลือกก่อนโหลดใหม่
+            select.innerHTML = "<option value=''>-- เลือกชื่อ --</option>"; // ตัวเลือกเริ่มต้น
 
             data.forEach(user => {
                 let option = document.createElement("option");
-                option.value = user.firstName; // ใช้ firstName เป็นค่าที่ส่งไป
-                option.textContent = user.firstName; // แสดง firstName ใน dropdown
+                option.value = user.firstName; 
+                option.textContent = user.firstName;
                 select.appendChild(option);
             });
         })
-        .catch(error => console.error("Error loading JSON:", error));
+        .catch(error => {
+            console.error("เกิดข้อผิดพลาดในการโหลดรายชื่อ:", error);
+            alert("ไม่สามารถโหลดรายชื่อได้ กรุณาลองใหม่!");
+        });
 }
 
-// อัปเดตเวลาตามประเทศไทย
+// 📌 อัปเดตเวลาตามโซนเวลาไทย
 function updateClock() {
     const now = new Date();
     document.getElementById("clock").textContent = new Intl.DateTimeFormat('th-TH', {
@@ -30,35 +35,47 @@ function updateClock() {
     }).format(now);
 }
 
-// ส่งข้อมูลไป Google Sheets
+// 📌 ส่งข้อมูลการลงเวลาเข้า
 function sendData() {
-    const select = document.getElementById("nameSelect");
-    const firstName = select.value; // ดึงค่าที่ถูกเลือกจาก dropdown
-    const time = new Intl.DateTimeFormat('th-TH', {
-        hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: "Asia/Bangkok"
-    }).format(new Date());
+    var user = document.getElementById("nameSelect").value;
 
-    fetch("https://script.google.com/macros/s/AKfycbzwyXfh3coDeli0fn0NCKOom94HZemZjvvWMoG-UQ7sEw7iNkvN1MAj91eBRcnvyAncBA/exec", {
+    if (!user) {
+        alert("กรุณาเลือกชื่อก่อนลงเวลา!");
+        return;
+    }
+
+    sendRequest("clockIn", user);
+}
+
+// 📌 ส่งข้อมูลการลงเวลาออก
+function sendClockOut() {
+    var user = document.getElementById("nameSelect").value;
+
+    if (!user) {
+        alert("กรุณาเลือกชื่อก่อนลงเวลาออก!");
+        return;
+    }
+
+    sendRequest("clockOut", user);
+}
+
+// 📌 ฟังก์ชันหลักสำหรับส่งข้อมูลไป Google Apps Script
+function sendRequest(action, user) {
+    var url = "https://script.google.com/macros/s/AKfycbz14LZ5SXMuXH97U2SdTGvYPfGGqnAKl0wrARd87_6GtUrqnjdLuDJTY8MiyehcLt6qgg/exec";
+    var params = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, time }),
-        redirect: "follow" // เพิ่ม redirect เพื่อจัดการการตอบกลับจาก Google Apps Script
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.result === "success") {
-            alert("บันทึกข้อมูลเรียบร้อย!");
-        } else {
-            alert("เกิดข้อผิดพลาด: " + data.message);
-        }
-    })
-    .catch(error => {
-        console.error("Error sending data:", error);
-        alert("เกิดข้อผิดพลาดในการส่งข้อมูล!");
-    });
+        body: JSON.stringify({ action: action, user: user })
+    };
+
+    fetch(url, params)
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            document.getElementById("nameSelect").value = ""; // เคลียร์ค่า dropdown หลังทำรายการ
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("เกิดข้อผิดพลาด กรุณาลองใหม่!");
+        });
 }
