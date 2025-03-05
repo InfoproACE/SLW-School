@@ -30,10 +30,10 @@ function updateClock() {
 
 // ส่งข้อมูลไป Google Sheets
 function sendData() {
-    const username = document.getElementById("nameSelect").value;
+    const firstName = document.getElementById("nameSelect").value;
     const time = new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" });
 
-    if (!username) {
+    if (!firstName) {
         alert("กรุณาเลือกชื่อก่อนกดลงเวลา");
         return;
     }
@@ -41,7 +41,7 @@ function sendData() {
     fetch("https://script.google.com/macros/s/AKfycbyjzPPZNIwGQ8V7T7TZGP7nu2ExbnXKrfxHLl0CdNm95HkYxF9RituJHtM0mOp-EKBbNw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, time }),
+        body: JSON.stringify({ firstName, time }),
         mode: "no-cors" // ปิด CORS
     })
     .then(() => {
