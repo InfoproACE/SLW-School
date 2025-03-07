@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>ลงคะแนนวิชาทั่วไป</title>
+    <link rel="stylesheet" href="css/t-style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        
+        form input {
+            font-size: 14px;
+            font-family: 'Anuphan';
+            padding: 2px 10px;
+        }
+        
+        input[name^="number_"] {
+            max-width: 30px !important;
+            padding: 2px;
+            font-size: 12px;
+        }
+        
+        input[name^="name_"] {
+            max-width: 150px;
+            padding: 2px;
+            font-size: 12px;
+        }
+        input[name^="score"][name$="_1"],
+        input[name^="score"][name$="_2"],
+        input[name^="score"][name$="_3"],
+        input[name^="score"][name$="_4"],
+        input[name^="score"][name$="_5"]{
+            max-width: 40px;
+            padding: 2px;
+            font-size: 12px;
+        }
+        
+        input[name^="score11_"],
+        input[name^="score12_"]{
+            max-width: 50px !important;
+        }
+        
+        input[name^="total_"]{
+            max-width: 50px ;
+            padding: 2px;
+            font-size: 12px;
+        }
+        button.btn.btn-primary {
+            font-family: 'Anuphan';
+            padding: 2px 10px;
+            background: #0c7bfd;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-info">
+            <img id="profilePic" alt="Profile Picture">
+            <span id="userProfile"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="klw-flex">
+            <h1>ลงคะแนนวิชาทั่วไป ม.2</h1>
+        </div>
+        <form method="post" autocomplete="off" name="hello-sheet" id="news">
+            <div style="display: flex;gap: 10px;">
+                      <div style=" display: grid; text-align: left; ">
+                          <label for="name">ชื่อ นามสกุลครู</label>
+                          <input type="text" id="name" placeholder="ชื่อ นามสกุลครู" name="name_teacher" required="">
+                      </div>
+                      <div style=" display: grid; text-align: left; ">
+                          <label for="id_teacher">รหัสครู</label>
+                          <input type="number" id="id_teacher" placeholder="รหัสครู" name="id_teacher" required="">
+                      </div>
+                      <div style=" display: grid; text-align: left; ">
+                            <label for="ids">รหัสวิชา</label>
+                            <input type="text" id="ids" name="ids"  placeholder="รหัสวิชา" required>
+                      </div>
+                      <div style=" display: grid; text-align: left; width: 100%;">
+                            <label for="names">ชื่อวิชา</label>
+                            <input type="text" id="names" name="names" placeholder="ชื่อวิชา" required>
+                      </div>
+              </div>
+          
+              <div style="display: flex;gap: 10px;">
+                            <div style=" display: grid; text-align: left; ">
+                                <label for="Years">ปีการศึกษา</label>
+                                <input type="number" id="Years" name="Years" placeholder="ปีการศึกษา" value="2568" required>
+                            </div>
+                        
+                            <div style=" display: grid; text-align: left; ">
+                                <label for="Term">ภาคเรียน</label>
+                                <input type="number" id="Term" name="Term" placeholder="ภาคเรียน" value="1" required>
+                            </div>
+                        
+                            <div style=" display: grid; text-align: left; ">
+                                <label for="class">ชั้น</label>
+                                <input type="name" id="class" name="class" value="ม.2" required readonly>
+                            </div>
+              </div>
+              <table border="1" id="dataTable" style="width: fit-content; border-collapse: collapse; text-align: center; margin-top: 20px;display: block;">
+                  <thead>
+                    <tr>
+                        <th rowspan="2">เลขที่</th>
+                        <th rowspan="2">ชื่อ นามสกุล</th>
+                        <th colspan="12">คะแนน</th>
+                        <th rowspan="2">รวม</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>กลางภาค</th>
+                        <th>ปลายภาค</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                    <!-- แถวข้อมูลจะถูกเพิ่มที่นี่ด้วย JavaScript -->
+                  </tbody>
+              </table>
+                
+            <button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button>
+        </form>
+
+    </main>
+
+    <script src="js/menu.js"></script>
+    <script src="js/level-entry.js"></script>
+    <script src="js/header-a.js"></script>
+    <script src="js/teacher.js"></script>
+    <script src="js/t-script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- ใช้เพื่อดึง Font Awesome icons -->
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwWu2G_EV8-rbi-h1p1qdU98hdX-FkqMVyuT1_vNbCY_dvhMwWL2FPKyhVawPacpA1bzg/exec'
+        const form = document.forms['hello-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
+                window.location.href = "https://slw-school.pages.dev/programs/teacher"; // Redirect to login page
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+    <script>
+        // ฟังก์ชันดึงข้อมูลจาก API และอัปเดตตาราง
+        async function fetchData() {
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbyN17GouBq20kJ9IsTLDa2mdPHiOpfFBEiNCK8Knxp88UKPUbqL4g5J739s8peu3K6g/exec');
+                const data = await response.json();
+    
+                if (data.length > 0) {
+                    renderTable(data);
+                } else {
+                    console.error('ไม่มีข้อมูล');
+                }
+            } catch (error) {
+                console.error('เกิดข้อผิดพลาดในการดึงข้อมูล:', error);
+            }
+        }
+    
+        // ฟังก์ชันแสดงข้อมูลในตาราง
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = ''; // ล้างข้อมูลเก่าออก
+    
+            data.forEach((item, index) => {
+                const rowNumber = index + 1; // เลขแถวเริ่มจาก 1
+                const row = document.createElement('tr');
+    
+                row.innerHTML = `
+                    <td><input type="number" name="number_${rowNumber}" required value="${rowNumber}" readonly ></td>
+                    <td><input type="text" name="name_${rowNumber}" required value="${item.name}" readonly></td>
+                    ${Array(12).fill(0).map((_, i) => 
+                        `<td><input type="number" name="score${i + 1}_${rowNumber}" value="${item[`score${i + 1}`] || ''}"></td>`
+                    ).join('')}
+                    <td><input type="number" name="total_${rowNumber}" value="${item.total || ''}" readonly></td>
+                `;
+    
+                tableBody.appendChild(row);
+            });
+        }
+    
+        // เรียกใช้ฟังก์ชันเมื่อหน้าโหลดเสร็จ
+        document.addEventListener('DOMContentLoaded', fetchData);
+        
+    </script>
+    <script>
+        // ฟังก์ชันคำนวณผลรวม
+        function calculateTotal(rowNumber) {
+            // ค้นหาช่อง input ที่มีชื่อขึ้นต้นด้วย scoreX_Y เช่น score1_1, score2_1, ..., score12_1
+            const scores = document.querySelectorAll(`input[name^="score"][name$="_${rowNumber}"]`);
+    
+            let total = 0;
+            scores.forEach(input => {
+                total += Number(input.value) || 0; // ถ้าค่าในช่องว่างจะใช้ 0
+            });
+    
+            // อัปเดตค่าในช่อง total_X
+            const totalInput = document.querySelector(`input[name="total_${rowNumber}"]`);
+            if (totalInput) {
+                totalInput.value = total;
+            }
+        }
+    
+        // เมื่อมีการกรอกข้อมูลในช่อง score จะเรียก calculateTotal
+        document.addEventListener('input', function(event) {
+            if (event.target.name.startsWith("score")) {
+                const rowNumber = event.target.name.split('_')[1]; // ดึงเลขแถวจาก name เช่น score1_1 → 1
+                calculateTotal(rowNumber);
+            }
+        });
+    </script>
+
+
+</body>
+</html>
