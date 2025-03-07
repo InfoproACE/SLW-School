@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>ลงคะแนนวิชาทั่วไป</title>
+    <link rel="stylesheet" href="css/t-style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <header>
+        <div class="profile-info">
+            <img id="profilePic" alt="Profile Picture">
+            <span id="userProfile"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="klw-flex">
+            <h1>ลงคะแนนวิชาทั่วไป</h1>
+        </div>
+        <form method="post" autocomplete="off" name="hello-sheet">
+            <div style="display: flex;gap: 10px;">
+                  <div style=" display: grid; text-align: left; ">
+                      <label for="name">ชื่อ นามสกุลครู</label>
+                      <input type="text" id="name" placeholder="ชื่อ นามสกุลครู" name="name_teacher" required="">
+                  </div>
+                  <div style=" display: grid; text-align: left; ">
+                      <label for="id_teacher">รหัสครู</label>
+                      <input type="number" id="id_teacher" placeholder="รหัสครู" name="id_teacher" required="">
+                  </div>
+                  <div style=" display: grid; text-align: left; ">
+                        <label for="ids">รหัสวิชา</label>
+                        <input type="text" id="ids" name="ids"  placeholder="รหัสวิชา" required>
+                  </div>
+                  <div style=" display: grid; text-align: left; ">
+                        <label for="names">ชื่อวิชา</label>
+                        <input type="text" id="names" name="names" placeholder="ชื่อวิชา" required>
+                  </div>
+              </div>
+          
+            <div style="display: flex;gap: 10px;">
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="Years">ปีการศึกษา</label>
+                        <input type="url" id="Years" name="link" placeholder="ปีการศึกษา" value="2568" required>
+                    </div>
+                
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="Term">ภาคเรียน</label>
+                        <input type="url" id="Term" name="link" placeholder="ภาคเรียน" value="1" required>
+                    </div>
+              </div>
+          
+            <div style="display: flex;gap: 10px;">
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="age">อายุ</label>
+                        <input type="text" id="age" name="age" placeholder="อายุ" required>
+                    </div>
+              </div>
+          
+            <div style="display: flex;gap: 10px;">
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="nationality">สัญชาติ</label>
+                        <input type="text" id="nationality" name="nationality" placeholder="สัญชาติ" value="ไทย" required>
+                    </div>
+                
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="ethnicity">เชื้อชาติ</label>
+                        <input type="text" id="ethnicity" name="race" placeholder="เชื้อชาติ" value="ไทย" required>
+                    </div>
+              </div>
+          
+            <div style="display: flex;gap: 10px;">
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="password">รหัสผ่าน</label>
+                        <input type="password" id="password" name="password" placeholder="รหัสผ่าน" required>
+                    </div>
+                
+                    <div style=" display: grid; text-align: left; ">
+                        <label for="confirm-password">ยืนยันรหัสผ่าน</label>
+                        <input type="password" id="confirm-password" name="confirm_passeord" placeholder="ยืนยันรหัสผ่าน" required>
+                    </div>
+              </div>
+    
+            <button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button>
+        </form>
+
+    </main>
+
+    <script src="js/menu.js"></script>
+    <script src="js/level-entry.js"></script>
+    <script src="js/header-a.js"></script>
+    <script src="js/teacher.js"></script>
+    <script src="js/t-script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- ใช้เพื่อดึง Font Awesome icons -->
+</body>
+</html>
