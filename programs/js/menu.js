@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwrm9heBvRHM2Tj5urKYL4avVz2vhNIHfXjj0XaTlSUBUNRtTY_P9ia603mI8EStj109w/exec");
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwy0lJqri9OKOxQgOCgzXT-Htjyml0J0hSAVkvQtN_Aw2ndNshX8ZxSj7rcHeTMDUSn/exec");
         
         if (!response.ok) {
             throw new Error("ไม่สามารถโหลดข้อมูลผู้ใช้ได้");
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const user = users.find(u => u.username === loggedInUser.username);
 
         if (!user) {
-            // alert("ไม่พบข้อมูลผู้ใช้");
+            alert("ไม่พบข้อมูลผู้ใช้");
             sessionStorage.removeItem("loggedInUser");
-            // window.location.href = "login.html";
-            // return;
+            window.location.href = "login.html";
+            return;
         }
 
         document.querySelectorAll(".sup-menu").forEach(menu => {
