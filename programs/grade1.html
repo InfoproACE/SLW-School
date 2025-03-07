@@ -208,13 +208,14 @@
         
     </script>
     <script>
+        // ฟังก์ชันคำนวณผลรวม
         function calculateTotal(rowNumber) {
-            // ค้นหา input ทุกตัวที่เป็น score ของแถวนั้น เช่น score1_1, score2_1, ..., score10_1
-            const scores = document.querySelectorAll(`input[name^="score${rowNumber}_"]`);
-            
+            // ค้นหาช่อง input ที่มีชื่อขึ้นต้นด้วย scoreX_Y เช่น score1_1, score2_1, ..., score12_1
+            const scores = document.querySelectorAll(`input[name^="score"][name$="_${rowNumber}"]`);
+    
             let total = 0;
             scores.forEach(input => {
-                total += Number(input.value) || 0; // ถ้าว่างให้ใช้ 0
+                total += Number(input.value) || 0; // ถ้าค่าในช่องว่างจะใช้ 0
             });
     
             // อัปเดตค่าในช่อง total_X
@@ -224,7 +225,7 @@
             }
         }
     
-        // ทำให้ทุกช่องคะแนนเรียก calculateTotal อัตโนมัติเมื่อเปลี่ยนค่า
+        // เมื่อมีการกรอกข้อมูลในช่อง score จะเรียก calculateTotal
         document.addEventListener('input', function(event) {
             if (event.target.name.startsWith("score")) {
                 const rowNumber = event.target.name.split('_')[1]; // ดึงเลขแถวจาก name เช่น score1_1 → 1
@@ -232,6 +233,7 @@
             }
         });
     </script>
+
 
 </body>
 </html>
