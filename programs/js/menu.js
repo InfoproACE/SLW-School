@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        document.querySelectorAll(".sub-menu").forEach(menu => {
+        document.querySelectorAll(".sup-menu").forEach(menu => {
             menu.addEventListener("click", function () {
                 const selectedDepartment = this.id; // รับค่า ID ของเมนูที่กด
                 const pageMap = {
