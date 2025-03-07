@@ -37,8 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
             
-            countdown.innerHTML = `<h2>เหลือเวลา ${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที</h2>`;
+            countdown.innerHTML = `
+                <h2>เหลือเวลา ${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที</h2>
+                <br>
+                <img src="https://s-mytcas.pages.dev/img/hero.png">
+                `;
             countdown.style.display = "block";
+            countdown.style.textAlign = "center";
         }
     }
     
