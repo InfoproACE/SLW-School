@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const user = users.find(u => u.username === loggedInUser.username);
 
         if (!user) {
-            alert("ไม่พบข้อมูลผู้ใช้");
+            // alert("ไม่พบข้อมูลผู้ใช้");
             sessionStorage.removeItem("loggedInUser");
-            window.location.href = "login.html";
-            return;
+            // window.location.href = "login.html";
+            // return;
         }
 
         document.querySelectorAll(".sup-menu").forEach(menu => {
