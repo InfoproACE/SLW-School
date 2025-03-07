@@ -205,6 +205,33 @@
     
         // เรียกใช้ฟังก์ชันเมื่อหน้าโหลดเสร็จ
         document.addEventListener('DOMContentLoaded', fetchData);
+        
     </script>
+    <script>
+        function calculateTotal(rowNumber) {
+            // ค้นหา input ทุกตัวที่เป็น score ของแถวนั้น เช่น score1_1, score2_1, ..., score10_1
+            const scores = document.querySelectorAll(`input[name^="score${rowNumber}_"]`);
+            
+            let total = 0;
+            scores.forEach(input => {
+                total += Number(input.value) || 0; // ถ้าว่างให้ใช้ 0
+            });
+    
+            // อัปเดตค่าในช่อง total_X
+            const totalInput = document.querySelector(`input[name="total_${rowNumber}"]`);
+            if (totalInput) {
+                totalInput.value = total;
+            }
+        }
+    
+        // ทำให้ทุกช่องคะแนนเรียก calculateTotal อัตโนมัติเมื่อเปลี่ยนค่า
+        document.addEventListener('input', function(event) {
+            if (event.target.name.startsWith("score")) {
+                const rowNumber = event.target.name.split('_')[1]; // ดึงเลขแถวจาก name เช่น score1_1 → 1
+                calculateTotal(rowNumber);
+            }
+        });
+    </script>
+
 </body>
 </html>
